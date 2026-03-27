@@ -1,0 +1,55 @@
+<router-outlet></router-outlet>
+
+<form [formGroup]="formGroup" class="form-group">
+  <fieldset class="form-fieldset">
+    <legend>Personal Info</legend>
+    <lib-custom-input
+      inputId="nameInput"
+      type="text"
+      label="Name"
+      inputName="Name"
+      formControlName="name"
+      [customErrorMessage]="nameFieldCustomErrorMessage"
+    ></lib-custom-input>
+
+    <lib-custom-input
+      inputId="ageInput"
+      type="number"
+      label="Age"
+      inputName="Age"
+      formControlName="age"
+    ></lib-custom-input>
+
+    <lib-custom-select
+      selectId="countrySelect"
+      label="Country"
+      selectName="contry"
+      [options]="countryList"
+      formControlName="country"
+    >
+    </lib-custom-select>
+
+    <lib-custom-input
+      inputId="emailInput"
+      type="text"
+      label="Email"
+      inputName="Email"
+      formControlName="email"
+      [customErrorMessage]="emailFieldCustomErrorMessage"
+    ></lib-custom-input>
+  </fieldset>
+
+  <lib-custom-multi-check formControlName="items">
+    <div class="container">
+      <lib-custom-checkbox
+        *ngFor="let item of itemsList"
+        [value]="item"
+        [label]="item"
+      ></lib-custom-checkbox>
+    </div>
+  </lib-custom-multi-check>
+
+  <p>{{ formGroup.value | json }}</p>
+
+  <button type="submit" (click)="submit()">Submit</button>
+</form>

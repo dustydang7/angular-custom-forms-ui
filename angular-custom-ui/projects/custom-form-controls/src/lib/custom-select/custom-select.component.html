@@ -1,0 +1,18 @@
+<div class="custom-select-form-control" *ngIf="control">
+  <select [formControl]="control" [id]="selectId">
+    <option *ngFor="let option of options" [value]="option">
+      {{option}}
+    </option>
+  </select>
+  <div class="underline"></div>
+  <label [for]="selectId" [class.required]="isRequired">
+    {{label}}
+  </label>
+
+  <ng-container *ngIf="control.errors">
+    <lib-validation-errors
+      [customErrorMessages]="customErrorMessage"
+      [errors]="control.errors"
+    ></lib-validation-errors>
+  </ng-container>
+</div>

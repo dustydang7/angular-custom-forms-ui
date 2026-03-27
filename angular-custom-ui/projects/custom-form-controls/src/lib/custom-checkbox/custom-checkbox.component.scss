@@ -1,0 +1,32 @@
+input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+
+  &:checked ~ .custom-checkbox {
+    background-color: white;
+    color: #5264ae;
+    border: 3px solid #5264ae;
+  }
+}
+
+.custom-checkbox {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 5px;
+  height: 40px;
+  min-width: 130px;
+  max-width: 130px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: white;
+    color: #5264ae;
+    border: 3px solid #5264ae;
+  }
+}
+
+

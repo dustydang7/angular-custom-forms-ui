@@ -1,0 +1,18 @@
+<div class="custom-input-form-control" *ngIf="control">
+  <input
+    [id]="inputId"
+    [type]="type"
+    [name]="inputName"
+    [required]="isRequired"
+    [formControl]="control"
+  />
+  <div class="underline"></div>
+  <label [for]="inputId" [class.required]="isRequired">{{ label }}</label>
+
+  <ng-container *ngIf="control.errors">
+    <lib-validation-errors
+      [errors]="control.errors"
+      [customErrorMessages]="customErrorMessage"
+    ></lib-validation-errors>
+  </ng-container>
+</div>
