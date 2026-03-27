@@ -6,6 +6,10 @@
 # Angular WebApp (App)
 - Small app spin-up to consume the library
 
+# How to install
+- `npm install` on angular custom ui directory, run `npm build` to get dist
+- `npm install` on angular app
+
 # How to use
 - use `npm link` on angular custom ui directory
 - use `npm link custom-form-controls` on angular web app
